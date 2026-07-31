@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Surprise ❤️</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+background:linear-gradient(135deg,#ff4d88,#ff99cc);
+overflow:hidden;
+text-align:center;
+color:white;
+}
+
+.container{
+padding:20px;
+}
+
+#gift{
+font-size:120px;
+cursor:pointer;
+animation:bounce 1.5s infinite;
+}
+
+#message{
+display:none;
+margin-top:20px;
+font-size:24px;
+line-height:1.8;
+}
+
+button{
+margin-top:30px;
+padding:15px 30px;
+font-size:18px;
+border:none;
+border-radius:30px;
+background:white;
+color:#ff2d75;
+font-weight:bold;
+cursor:pointer;
+}
+
+@keyframes bounce{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+}
+
+@keyframes fall{
+to{
+transform:translateY(110vh) rotate(360deg);
+}
+}
+</style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+<source src="ed_sheeran_perfect.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+
+<h1>🎁 A Surprise For You ❤️</h1>
+
+<div id="gift" onclick="openGift()">🎁</div>
+
+<div id="message">
+<h2>💖 Happy Girlfriend Day, Richa 💖</h2>
+
+<p>
+You are my smile, my happiness, my peace, and my forever. ❤️<br><br>
+
+Thank you for always being with me.<br>
+
+I Love You So Much! 🌹<br><br>
+
+<b>Forever Yours,<br>
+Hemash ❤️</b>
+</p>
+
+<button onclick="fireworks()">
+🎆 Celebrate
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+function openGift(){
+document.getElementById("gift").innerHTML="💝";
+document.getElementById("message").style.display="block";
+}
+
+function fireworks(){
+
+setInterval(()=>{
+
+let heart=document.createElement("div");
+
+heart.innerHTML=["❤️","💖","💕","🌹","✨"][Math.floor(Math.random()*5)];
+
+heart.style.position="fixed";
+heart.style.left=Math.random()*100+"vw";
+heart.style.top="-40px";
+heart.style.fontSize=(20+Math.random()*30)+"px";
+heart.style.animation="fall 5s linear";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},5000);
+
+},200);
+
+alert("❤️ Happy Girlfriend Day Richa ❤️");
+}
+
+</script>
+
+</body>
+</html>

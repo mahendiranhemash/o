@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memory Jar ❤️</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#ff5c8a,#ffd1dc);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+text-align:center;
+color:white;
+}
+
+.container{
+width:90%;
+max-width:400px;
+}
+
+.jar{
+font-size:120px;
+cursor:pointer;
+animation:shake 2s infinite;
+}
+
+.card{
+display:none;
+background:white;
+color:#ff2d75;
+padding:20px;
+border-radius:20px;
+margin-top:20px;
+font-size:20px;
+font-weight:bold;
+}
+
+button{
+margin-top:20px;
+padding:12px 25px;
+border:none;
+border-radius:30px;
+background:white;
+color:#ff2d75;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+}
+
+@keyframes shake{
+0%,100%{transform:rotate(0deg);}
+25%{transform:rotate(-5deg);}
+75%{transform:rotate(5deg);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🫙 Memory Jar ❤️</h1>
+
+<p>Tap the jar to reveal a beautiful memory.</p>
+
+<div class="jar" onclick="nextMemory()">🫙</div>
+
+<div id="card" class="card"></div>
+
+<button onclick="location.href='loveletter.html'">
+💌 Read Love Letter
+</button>
+
+</div>
+
+<script>
+const memories=[
+"❤️ The day we first met will always be special.",
+"🌹 Your smile brightens every day of my life.",
+"💕 Every moment with you becomes a beautiful memory.",
+"💖 Thank you for always being by my side.",
+"🥰 Hemash ❤️ Richa Forever."
+];
+
+let index=0;
+
+function nextMemory(){
+document.getElementById("card").style.display="block";
+document.getElementById("card").innerHTML=memories[index];
+index=(index+1)%memories.length;
+}
+</script>
+
+</body>
+</html>
